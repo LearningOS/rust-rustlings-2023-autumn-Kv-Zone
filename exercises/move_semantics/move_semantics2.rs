@@ -7,12 +7,11 @@
 // Execute `rustlings hint move_semantics2` or use the `hint` watch subcommand
 // for a hint.
 
-// I AM NOT DONE
-
 fn main() {
-    let vec0 = Vec::new();
-
-    let mut vec1 = fill_vec(vec0);
+    let vec0 = Vec::new();//vec0在fill_vec中交出权限并且在函数结束时释放，因此不可调用
+    //这里我选择使用clone解决这个问题
+    let vec2 = vec0.clone();
+    let mut vec1 = fill_vec(vec2);
 
     println!("{} has length {}, with contents: `{:?}`", "vec0", vec0.len(), vec0);
 
