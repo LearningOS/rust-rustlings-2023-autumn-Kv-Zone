@@ -17,12 +17,10 @@ use std::collections::HashMap;
 fn fruit_basket() -> HashMap<String, u32> {
     let mut basket = HashMap::new(); // TODO: declare your hash map here. 定义一个hashmap
 
-    // Two bananas are already given for you :)
-    basket.insert(String::from("banana"), 2);
-
-    // TODO: Put more fruits in your basket here.
+    basket.insert(String::from("banana"), 2);//水果不少于三种，个数不少于5个
     basket.insert(String::from("apple"), 2);
     basket.insert(String::from("orange"), 2);
+    basket // 记得返回
 }
 
 #[cfg(test)]
