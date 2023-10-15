@@ -40,10 +40,24 @@ impl Default for Person {
 // If while parsing the age, something goes wrong, then return the default of
 // Person Otherwise, then return an instantiated Person object with the results
 
-// I AM NOT DONE
+// 长度为0 返回Default
+// 逗号分隔split
+//取出第一个元素，作为名字，如果名字为空，则返回Default，若是其他元素则作为usize的年龄，如果出现错误则返回Default，同时返回其他结果
+
 
 impl From<&str> for Person {
     fn from(s: &str) -> Person {
+        if s.is_empty(){// 匹配姓名
+            return Default::default();
+        }
+        match s.split_once(","){
+            Some((name, _)) if name.is_empty() => Default::default(),  // 匹配年龄
+            Some((name, age_str)) => match age_str.parse::<usize>(){ 
+                Ok(age) => Person{name: name.to_string(), age, },
+                Err(_) => Default::default(),
+            }
+            None => Default::default(),
+        }
     }
 }
 
