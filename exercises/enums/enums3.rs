@@ -42,7 +42,7 @@ impl State {
         self.position = p;
     }
 
-    fn process(&mut self, message: Message) {//使用match函shu
+    fn process(&mut self, message: Message) {//使用match函数
         // TODO: create a match expression to process the different message
         // variants
         // Remember: When passing a tuple as a function argument, you'll need
