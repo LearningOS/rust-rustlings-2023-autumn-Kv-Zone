@@ -8,5 +8,5 @@
 
 
 fn main() {
-    println!("Hello !");//{}需要调用变量
+    println!("Hello !");//{}需要调用变量 删除即可
 }
